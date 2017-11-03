@@ -28,13 +28,15 @@ function viewCart() {
       viewItem.push(Object.keys(cart[i]));
     }
   var viewItem = [].concat.apply([], viewItem);
+  console.log(viewItem);
 //the cart is an array of objects, but the indexes of the array are acting as
 //keys--I have to access the key of the array within each index.
 // turn the object keys into an array of just the keys, then identify by i
 // using object.keys
   var viewPrice = [];
   for (let i = 0; i < cart.length; i++) {
-      viewPrice.push((cart[i].viewItem[i]));
+      viewValue = viewItem[i];
+      viewPrice.push((cart[i].viewValue));
   }
   //object.values not recognized.  Need to find new way using keys.
   //review .hasOwnProperty to figure out how this would have been done pre-Object.keys
