@@ -34,7 +34,7 @@ function viewCart() {
 // using object.keys
   var viewPrice = [];
   for (let i = 0; i < cart.length; i++) {
-      viewPrice.push(Object.values(cart[i]));
+      viewPrice.push((cart[i].viewItem[i]));
   }
   //object.values not recognized.  Need to find new way using keys.
   //review .hasOwnProperty to figure out how this would have been done pre-Object.keys
@@ -54,6 +54,7 @@ function viewCart() {
     for (let i = 0; i < (cart.length - 1); i++) {
       contents.push(`${viewItem[i]} at $${viewPrice[i]}, and `)
       }
+      //might have to slice the comma off?
       contents.push(`${viewItem[(cart.length-1)]} at $${viewPrice[(cart.length-1)]}.`);
   }
     return `In your cart, you have ${contents}`;
