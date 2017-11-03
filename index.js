@@ -29,24 +29,13 @@ var contents = [];
 var viewItem = [];
 var viewPrice = [];
   for (let i = 0; i < cart.length; i++) {
-      viewItem.push(Object.keys(cart[i]));
-    }
-var viewItem = [].concat.apply([], viewItem);
-  console.log(viewItem);
-//the cart is an array of objects, but the indexes of the array are acting as
-//keys--I have to access the key of the array within each index.
-// turn the object keys into an array of just the keys, then identify by i
-// using object.keys
+    viewItem.push(Object.keys(cart[i]));
+  }
 
   for (let i = 0; i < cart.length; i++) {
-//      viewPriceName = viewItem[i];
-      viewPrice.push(cart[i][viewItem[i]]);
+    viewPrice.push(cart[i][viewItem[i]]);
   }
-  //object.values not recognized.  Need to find new way using keys.
-  //review .hasOwnProperty to figure out how this would have been done pre-Object.keys
-//  var viewPrice = [].concat.apply([], viewPrice);
-  // turn the object values into an array of just the values, then identify by i
-  // using object.values
+
   if (cart.length === 0) {
     return "Your shopping cart is empty.";
   }
@@ -65,19 +54,6 @@ var viewItem = [].concat.apply([], viewItem);
   }
     return `In your cart, you have ${contents}`;
 }
-
-  //def need an IF statement for if cart.length = 1 vs 2, 3+ for oxford comma
-  //don't need loops for length=1 or 2.  3, will loop.
-  //DO WHILE--push (to end) final sentence with period; while i<cart.length,
-  //push item and price to end.
-//    for (i=0; i < cart.length; i++) {
-//      contents.push(`${viewItem[i]} at $${viewPrice[i]}, `)
-//    }
-// do I need a different loop function for the one below/above? Or another if?
-//    for (i=0; i = cart.length; i++) {
-//      contents.push(`${viewItem[i]} at $${viewPrice[i]}`);
-//    }
-
 
 function total() {
   // write your code here
