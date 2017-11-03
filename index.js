@@ -1,7 +1,7 @@
 var cart = [];
-var contents = [];
-var viewItem = [];
-var viewPrice = [];
+//var contents = [];
+//var viewItem = [];
+//var viewPrice = [];
 
 function getCart() {
  return cart;
@@ -25,12 +25,12 @@ function addToCart(item) {
 }
 
 function viewCart() {
-//  var contents = [];
-//  var viewItem = [];
+var contents = [];
+var viewItem = [];
   for (let i = 0; i < cart.length; i++) {
       viewItem.push(Object.keys(cart[i]));
     }
-//  var viewItem = [].concat.apply([], viewItem);
+var viewItem = [].concat.apply([], viewItem);
   console.log(viewItem);
 //the cart is an array of objects, but the indexes of the array are acting as
 //keys--I have to access the key of the array within each index.
