@@ -35,7 +35,7 @@ function viewCart() {
 // using object.keys
   var viewPrice = [];
   for (let i = 0; i < cart.length; i++) {
-      viewValue = viewItem[i];
+      var viewValue = viewItem[i];
       viewPrice.push((cart[i].viewValue));
   }
   //object.values not recognized.  Need to find new way using keys.
