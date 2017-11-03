@@ -27,6 +27,7 @@ function addToCart(item) {
 function viewCart() {
 var contents = [];
 var viewItem = [];
+var viewPrice = [];
   for (let i = 0; i < cart.length; i++) {
       viewItem.push(Object.keys(cart[i]));
     }
@@ -36,7 +37,7 @@ var viewItem = [].concat.apply([], viewItem);
 //keys--I have to access the key of the array within each index.
 // turn the object keys into an array of just the keys, then identify by i
 // using object.keys
-// var viewPrice = [];
+
   for (let i = 0; i < cart.length; i++) {
 //      viewPriceName = viewItem[i];
       viewPrice.push(cart[i][viewItem[i]]);
